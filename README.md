@@ -9,6 +9,7 @@ Here is an example how it can be used:
 function func() {
     static let isFirstCall = true;
     static let counter = 0;
+
     if (isFirstCall) {
         isFirstCall = false;
         console.log('Static variables initialized!');
@@ -19,9 +20,9 @@ function func() {
     counter++;
 }
 
-func(); // OUT: "Static var a allocated!", "counter: 0"
-func(); // OUT: "counter: 1"
-func(); // OUT: "counter: 2"
+func(); // OUT: "Static variables initialized!", "Counter: 0"
+func(); // OUT: "Counter: 1"
+func(); // OUT: "Counter: 2"
 ```
 
 This is extremely useful for functions with high execution rate and function with constants that require a complex operation for the initialization that only should be called once. So functions can store their own state for the next executions and be independent of the global context.
@@ -42,7 +43,7 @@ function func() {
     counter++;
 }
 
-func(); // OUT: "Static var a allocated!", "counter: 0"
-func(); // OUT: "counter: 1"
-func(); // OUT: "counter: 2"
+func(); // OUT: "Static variables initialized!", "Counter: 0"
+func(); // OUT: "Counter: 1"
+func(); // OUT: "Counter: 2"
 ```
