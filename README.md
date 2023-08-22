@@ -70,7 +70,7 @@ One solution to this problem could be local static variables, as implemented in 
 Here is an example of how it could be used:
 
 ```javascript
-function testWithoutAllocation(i) {
+function task(i) {
     static let vec = new Vector(0, 0, 0);
     vec.set(i + 1.13, i + 5.231, i + 7.1247);
 }
