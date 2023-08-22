@@ -68,6 +68,16 @@ However, we are immediately confronted with the fact that we can't use function 
 One solution to this problem could be local static variables, as implemented in some other C-like low-level languages. These variables would allow us to optimize memory allocation and function execution time by allocating and initializing the variables only once after the first function call. Subsequent function calls would use the already allocated variable with the last value. It's similar to global variables that can only be accessed from the specific function in which they are declared.
 
 Here is an example of how it could be used:
+
+```javascript
+function testWithoutAllocation(i) {
+    static let vec = new Vector(0, 0, 0);
+    vec.set(i + 1.13, i + 5.231, i + 7.1247);
+}
+```
+
+and a more complex example of how it should work:
+
 ```javascript
 function func() {
     static let isFirstCall = true;
